@@ -4,6 +4,29 @@ import banner from '../assets/banner_clean.png'
 import image from '../assets/58.png'
 
 function Home() {
+
+    function GobyInstalled() {
+        const { chia } = window;
+        return Boolean(chia && chia.isGoby);
+    }
+    const button = document.getElementById('goby-button');
+    button.addEventListener('click', () => {
+        if (GobyInstalled()) {
+            const params = {
+                "to": "xch1458padpp4yw30nz9r63z9ty0ay7ju7xg8z0gjq2ekxumapmgprpqtaum28",
+                "amount": "100000000",
+                "memos": ["0x68656c6c6f2063686961", ], // hex string, "hello chia".encode("utf-8)
+                "assetId": "",                              
+            };
+            window.chia.request({ method: "transfer", params });
+        }
+        else {
+            window.open("https://goby.app", "_blank");
+        }
+    });
+
+
+
   return (
     <div className='home'>
         <div className='container'>
@@ -19,7 +42,7 @@ function Home() {
                     </div>
                 </div>
                 <div className='details-text'>
-                    {/* <h3>MINT INFO</h3> */}
+                    <h3>MINT INFO</h3>
                     <div className='details-text-1'>
                         <div className='details-text-1-1'>
                             <h3>Whitelisted</h3>
@@ -52,9 +75,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <button type="submit">Mint</button>
-                    </div>
+                    <button  id='goby-button' >Mint</button>
                 </div>
            </div>
         </div>

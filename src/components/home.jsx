@@ -75,7 +75,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <button  id='goby-button' >Mint</button>
+                    <div id='goby-button' className='btn'>Mint</div>
                 </div>
            </div>
         </div>

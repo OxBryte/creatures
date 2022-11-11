@@ -81,7 +81,7 @@
     font-size: 24px;
 }
 
-button {
+.btn {
     width: 400px;
     height: auto;
     font-size: 16px;
@@ -93,7 +93,7 @@ button {
     color: #FFF;
 }
 
-button:hover {
+.btn:hover {
     background-color: #393E46;
 }
 
